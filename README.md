@@ -100,3 +100,8 @@ Gallery Grid	Visual showcase of previous work and studio highlights
 Booking Form	Customer call-to-action for online bookings
 About Section	Brand story, team introduction, and contact details
 Footer	Social links, contact info, and copyright details
+
+
+
+<img width="1187" height="796" alt="image" src="https://github.com/user-attachments/assets/f38917fb-9323-450e-9317-80d4e9c212b1" />
+
