@@ -120,6 +120,9 @@ About Section	Brand story, team introduction, and contact details
 Footer	Social links, contact info, and copyright details
 
 
+<img width="329" height="640" alt="image" src="https://github.com/user-attachments/assets/e9c28813-1ff5-4006-8908-7ba8d960df16" />
+
+
 
 <img width="1187" height="796" alt="image" src="https://github.com/user-attachments/assets/f38917fb-9323-450e-9317-80d4e9c212b1" />
 
