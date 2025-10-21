@@ -1,6 +1,6 @@
 // src/pages/Services.jsx
 import React from "react";
-import { Scissors, NailPolish, Spa, PaintBrush } from "lucide-react";
+import { Scissors, Star, Droplet, Layers } from "lucide-react"; // Safe icons
 import ServiceCard from "../components/ServiceCard.jsx";
 
 export default function Services() {
@@ -13,23 +13,22 @@ export default function Services() {
     {
       title: "Nail Art",
       description: "Creative nail designs, gel polish, and luxury manicures.",
-      icon: NailPolish,
+      icon: Star,
     },
     {
       title: "Spa Treatments",
       description: "Relaxing massages, facials, and skincare treatments.",
-      icon: Spa,
+      icon: Droplet,
     },
     {
       title: "Makeup & Beauty",
       description: "Professional makeup services for events and photoshoots.",
-      icon: PaintBrush,
+      icon: Layers,
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[oklch(95%_0.05_320)] px-6 py-16">
-      
       {/* Page Header */}
       <div className="text-center mb-12">
         <h1
