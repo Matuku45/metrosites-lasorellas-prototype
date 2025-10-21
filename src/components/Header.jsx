@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import { Menu, X, Home, Scissors, Image, Calendar, Info } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Navigation links with icons
   const navLinks = [
     { name: "Home", href: "/", icon: Home },
     { name: "Services", href: "/services", icon: Scissors },
@@ -18,34 +18,29 @@ export default function Header() {
   return (
     <header className="fixed w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo with icon and bounce animation */}
-        <motion.a
-          href="/"
-          className="flex items-center gap-2 text-2xl font-bold text-blue-600"
+        <motion.div
+          className="flex items-center gap-2 text-2xl font-bold text-blue-600 cursor-pointer"
           animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
           <Scissors className="w-6 h-6 animate-spin-slow text-blue-500" />
-          La Sorellas
-        </motion.a>
+          <Link to="/">La Sorellas</Link>
+        </motion.div>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
-            <motion.a
+            <motion.div
               key={link.name}
-              href={link.href}
-              className="flex items-center gap-1 font-medium text-blue-600 hover:text-blue-400 transition-colors"
+              className="flex items-center gap-1 font-medium text-blue-600 hover:text-blue-400 transition-colors cursor-pointer"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <link.icon className="w-5 h-5" />
-              {link.name}
-            </motion.a>
+              <Link to={link.href}>{link.name}</Link>
+            </motion.div>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
@@ -59,7 +54,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu with fade-in */}
       {isOpen && (
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
@@ -74,14 +68,14 @@ export default function Header() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="flex items-center gap-2 font-medium text-blue-600 hover:text-blue-400 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <link.icon className="w-5 h-5" />
                   {link.name}
-                </a>
+                </Link>
               </motion.li>
             ))}
           </ul>
