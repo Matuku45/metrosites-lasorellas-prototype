@@ -2,20 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 
+// Import images from src/assets/galleryImages
+import one from "../assets/galleryImages/one.jpg";
+import two from "../assets/galleryImages/two.webp";
+import three from "../assets/galleryImages/three.webp";
+import four from "../assets/galleryImages/four.jpg";
+import five from "../assets/galleryImages/five.webp";
+import six from "../assets/galleryImages/six.webp";
+import seven from "../assets/galleryImages/seven.jpg";
+
 export default function Gallery() {
   const primaryColor = "oklch(88.2% 0.059 254.128)";
   const secondaryColor = "oklch(80.9% 0.105 251.813)";
 
-  // Define gallery images directly based on your folder
-  const galleryImages = [
-    "/assets/galleryImages/one.jpg",
-    "/assets/galleryImages/two.webp",
-    "/assets/galleryImages/three.webp",
-    "/assets/galleryImages/four.jpg",
-    "/assets/galleryImages/five.webp",
-    "/assets/galleryImages/six.webp",
-    "/assets/galleryImages/seven.jpg",
-  ];
+  const galleryImages = [one, two, three, four, five, six, seven];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[oklch(95%_0.05_320)] px-6 py-16">
