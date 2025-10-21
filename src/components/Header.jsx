@@ -1,42 +1,45 @@
 // src/components/Header.jsx
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Scissors, Image, Calendar, Info } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Navigation links with icons
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Booking", href: "/booking" },
-    { name: "About", href: "/about" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Services", href: "/services", icon: Scissors },
+    { name: "Gallery", href: "/gallery", icon: Image },
+    { name: "Booking", href: "/booking", icon: Calendar },
+    { name: "About", href: "/about", icon: Info },
   ];
 
   return (
     <header className="fixed w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo with subtle bounce */}
+        {/* Logo with icon and bounce animation */}
         <motion.a
           href="/"
-          className="text-2xl font-bold text-blue-600"
+          className="flex items-center gap-2 text-2xl font-bold text-blue-600"
           animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
+          <Scissors className="w-6 h-6 animate-spin-slow text-blue-500" />
           La Sorellas
         </motion.a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
             <motion.a
               key={link.name}
               href={link.href}
-              className="font-medium text-blue-600 hover:text-blue-400 transition-colors"
+              className="flex items-center gap-1 font-medium text-blue-600 hover:text-blue-400 transition-colors"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
+              <link.icon className="w-5 h-5" />
               {link.name}
             </motion.a>
           ))}
@@ -73,9 +76,10 @@ export default function Header() {
               >
                 <a
                   href={link.href}
-                  className="block font-medium text-blue-600 hover:text-blue-400 transition-colors"
+                  className="flex items-center gap-2 font-medium text-blue-600 hover:text-blue-400 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
+                  <link.icon className="w-5 h-5" />
                   {link.name}
                 </a>
               </motion.li>
